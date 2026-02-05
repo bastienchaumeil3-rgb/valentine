@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Question importante ❤️</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      position: relative;
+      width: 300px;
+      height: 200px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Veux-tu être ma Valentine ? 💘</h1>
+
+  <div class="buttons">
+    <button id="yes" onclick="goYes()">Oui</button>
+    <button id="no">Non</button>
+  </div>
+
+  <script>
+    const noButton = document.getElementById("no");
+
+    noButton.addEventListener("mouseover", moveButton);
+    noButton.addEventListener("click", moveButton);
+
+    function moveButton() {
+      const x = Math.random() * 220;
+      const y = Math.random() * 160;
+      noButton.style.left = x + "px";
+      noButton.style.top = y + "px";
+    }
+
+    function goYes() {
+      document.body.innerHTML = `
+        <h1>Rendez-vous le 14 février à 20h ❤️</h1>
+        <p>Sois prête ✨</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
